@@ -7,12 +7,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
+  static final ValueNotifier<ThemeMode> themeNotifier =
+      ValueNotifier(ThemeMode.light);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<ThemeMode> (
+    return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
       builder: (_, ThemeMode currentMode, __) {
         return MaterialApp(
@@ -87,9 +88,9 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
               onPressed: () {
                 MyApp.themeNotifier.value =
-                  MyApp.themeNotifier.value == ThemeMode.light
-                      ? ThemeMode.dark
-                      : ThemeMode.light;
+                    MyApp.themeNotifier.value == ThemeMode.light
+                        ? ThemeMode.dark
+                        : ThemeMode.light;
               },
               icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
                   ? Icons.dark_mode
