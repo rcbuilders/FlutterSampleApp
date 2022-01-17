@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample_app/svg/svg_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -124,6 +125,12 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const SvgPage()));
+                },
+                child: const Text("Svg Image Sample Page"))
           ],
         ),
       ),
