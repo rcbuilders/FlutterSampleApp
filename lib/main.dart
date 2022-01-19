@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample_app/extended_image/extended_image_page.dart';
 import 'package:flutter_sample_app/svg/svg_page.dart';
 
 void main() {
@@ -130,7 +131,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const SvgPage()));
                 },
-                child: const Text("Svg Image Sample Page"))
+                child: const Text("Svg Image Sample Page")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const ExtendedImagePage()));
+                },
+                child: const Text("Extended Image Sample Page"))
           ],
         ),
       ),
