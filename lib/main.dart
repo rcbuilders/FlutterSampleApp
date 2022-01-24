@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample_app/extended_image/extended_image_page.dart';
 import 'package:flutter_sample_app/svg/svg_page.dart';
+import 'package:flutter_sample_app/utils/logger.dart';
 
 void main() {
   runApp(const MyApp());
@@ -63,6 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    // show logger message
+    _showLogMessage();
+
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -147,5 +151,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  void _showLogMessage() {
+    logger.v("Verbose log");
+
+    logger.d("Debug log");
+
+    logger.i("Info log");
+
+    logger.w("Warning log");
+
+    logger.e("Error log");
+
+    logger.wtf("What a terrible failure log");
   }
 }
