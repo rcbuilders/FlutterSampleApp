@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample_app/extended_image/extended_image_page.dart';
 import 'package:flutter_sample_app/main.dart';
 import 'package:flutter_sample_app/svg/svg_page.dart';
+import 'package:flutter_sample_app/text_theme_example/text_theme_example_screen.dart';
 import 'package:flutter_sample_app/utils/logger.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -103,7 +104,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const ExtendedImagePage()));
                 },
-                child: const Text("Extended Image Sample Page"))
+                child: const Text("Extended Image Example Page")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const TextThemeExampleScreen()));
+                },
+                child: const Text("TextTheme Example Page"))
           ],
         ),
       ),
